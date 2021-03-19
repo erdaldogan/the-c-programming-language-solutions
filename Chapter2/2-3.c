@@ -33,6 +33,12 @@ unsigned int htoi(char h[]){
 		i = 2;
 	}	
 	while ((c = h[i++]) != '\0'){
+		/* In ASCII standard, there is nothing between [A-Z], [a-z], and [0-9]. Therefore, their values are sequential
+		 * In C Language, integer operations on (char) variable are allowed. (char) has the int value of their
+		 * ASCII value.
+		 * ('C' - 'A') = 3, difference between the numeric ASCII values. An equality that has been sustained by
+		 * sequential arrangement ASCII standard. 
+		 */
 		if (c >= '0' && c <= '9'){
 			num = c - '0';	
 		}
